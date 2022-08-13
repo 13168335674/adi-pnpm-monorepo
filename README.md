@@ -65,6 +65,7 @@ cd ../../
 ```
 
 分别在 `pkg1/src/index.ts`、`pkg2/src/index.ts`写入测试代码:
+
 ```typescript
 // pkg1
 export const add = (a: number, b: number) => a + b;
@@ -73,7 +74,7 @@ import { add } from "pkg1";
 console.log(`add(1,2) = ${add(1, 2)}`);
 ```
 
-添加 typescript 到项目中:
+添加 `typescript` 到项目中:
 
 ```shell
 pnpm add typescript -wD
@@ -82,6 +83,7 @@ pnpm exec tsc --init
 mv tsconfig.json tsconfig.base.json
 code tsconfig.json
 ```
+
 新建写入 > tsconfig.json:
 ```json
 // tsconfig.json
@@ -92,6 +94,7 @@ code tsconfig.json
   }
 }
 ```
+
 分别为子项目创建 `tsconfig.json`:
 ```json
 // /packages/pkg1/tsconfig.json and /packages/pkg2/tsconfig.json
@@ -128,7 +131,7 @@ code tsconfig.json
 }
 ```
 
-把 pkg1 作为依赖添加到 pkg2 的开发依赖中
+把 pkg1 作为依赖添加到 pkg2 的开发依赖中:
 
 ```shell
 pnpm add pkg1 --filter pkg2 --workspace -D
@@ -201,7 +204,7 @@ export default defineBuildConfig({
 {
   ...,
   "scripts": {
-    "build": "pnpm -r --filter \"./packages/*\" build",
+    "build": "pnpm --filter \"./packages\" -r build",
     ...
   },
   ...
@@ -221,6 +224,8 @@ node ./packages/pkg2/dist/index.cjs
 # ADI-LOG => add(1,2) = 3
 ```
 
+[Github]()
+
 # 其他
 
-随着 vue / vite 等社区仓库迁移到了 PNPM 管理，
+随着 vue / vite 等越来越多的开源项目迁移到了 PNPM 进行管理，相信社区会越来越活跃，并带来更多简单、高效、安全的工具流实践。
