@@ -1,0 +1,17 @@
+{
+  "name": "adi-pnpm-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm --filter \"./packages/*\" -r build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "unbuild": "^0.8.8"
+  },
+  "description": ""
+}
