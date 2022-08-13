@@ -224,7 +224,7 @@ node ./packages/pkg2/dist/index.cjs
 # ADI-LOG => add(1,2) = 3
 ```
 
-[Github]()
+[Github](https://github.com/13168335674/adi-pnpm-monorepo)
 
 # 其他
 
